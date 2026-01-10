@@ -17,14 +17,13 @@ public class PushZeros {
       int lastIndex=-1;
       
       
-      
+      //This is forward search but you can also search from last index then break at first occurence
       for(int i=0;i<arr.length;i++) {
     	  if(arr[i]==0) {
     		  lastIndex=i;
     	  }
       }
   
-      
       System.out.println(lastIndex);
       
       for(int i=lastIndex-1;i>=0;i--) {
