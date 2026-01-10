@@ -1,5 +1,0 @@
-com\example\automation\base\BaseFactory.class
-com\example\automation\pages\LandingPage.class
-com\example\automation\utils\commonUtils\APIUtils.class
-com\example\automation\pages\LoginPage.class
-com\example\automation\utils\commonUtils\UIUtils.class

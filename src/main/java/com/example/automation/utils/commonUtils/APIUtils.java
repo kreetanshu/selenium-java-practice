@@ -1,24 +1,22 @@
 package com.example.automation.utils.commonUtils;
 
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
-
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
+import static io.restassured.RestAssured.given;
+
 public class APIUtils {
-   
+
     public Response sendGetRequest(String url) {
-        return RestAssured.given()
+        return given()
                 .when()
                 .get(url)
                 .then()
                 .extract()
                 .response();
     }
+
     public Response sendPostRequest(String url, Object body, String contentType) {
-        return RestAssured.given()
+        return given()
                 .contentType(contentType)
                 .body(body)
                 .when()
@@ -29,7 +27,7 @@ public class APIUtils {
     }
 
     public Response sendPutRequest(String url, Object body, String contentType) {
-        return RestAssured.given()
+        return given()
                 .contentType(contentType)
                 .body(body)
                 .when()
@@ -40,11 +38,13 @@ public class APIUtils {
     }
 
     public Response sendDeleteRequest(String url) {
-        return RestAssured.given()
+        return given()
                 .when()
                 .delete(url)
                 .then()
                 .extract()
                 .response();
     }
+
+
 }

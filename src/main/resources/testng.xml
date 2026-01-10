@@ -8,7 +8,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="webui.loginPage.Login"></class>
+			<class name="webui.loginPage.PracticeTest"></class>
 		</classes>
 	</test>
 	<test name="API Test Cases">
@@ -18,7 +18,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="api.sampleDev.APITests"></class>
+			<!--class name="api.sampleDev.APITests"></class-->
 		</classes>
 	</test>
 </suite>

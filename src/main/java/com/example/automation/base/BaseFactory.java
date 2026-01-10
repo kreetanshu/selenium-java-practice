@@ -19,12 +19,14 @@ public class BaseFactory {
     public void driverInitialization(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
+        /*
         options.addArguments("--headless=new"); // or "--headless" for older Chrome
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + System.currentTimeMillis());
+        */
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

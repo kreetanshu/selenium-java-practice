@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="methods" thread-count="3">
+  <test name="Test">
+    <listeners>
+        <listener class-name="listeners.MyListener"/>
+    </listeners>
+    <classes>
+      <class name="webui.loginPage.TestNGTests"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selenium Dom Practice</title>
+</head>
+<body>
+    <label for="myInput">Enter Text:</label>
+    <input type="text" id="myInput" value="initialValue">
+    <button onclick="updateInputValue()">Update Value</button>
+
+    <script>
+        function updateInputValue() {
+            document.getElementById('myInput').value = 'updatedByScript';
+        }
+    </script>
+</body>
+</html>
