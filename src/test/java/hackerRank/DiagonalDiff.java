@@ -25,10 +25,12 @@ public class DiagonalDiff {
 	public static void main(String[] args) {
 	
 		// TODO Auto-generated method stub
+		//Watch the Array List declerations
 		List<List<Integer>> matrix = new ArrayList<>();
-		matrix.add(new ArrayList<Integer>(Arrays.asList(1,2,3)));
-		matrix.add(new ArrayList<Integer>(Arrays.asList(4,5,6)));
-		matrix.add(new ArrayList<Integer>(Arrays.asList(9,8,9)));
+		
+		matrix.add(Arrays.asList(1,2,3));
+		matrix.add(Arrays.asList(4,5,6));
+		matrix.add(Arrays.asList(9,8,9));
 		
 		System.out.println(matrix);
 		System.out.println(getDiagonalDiff(matrix));
