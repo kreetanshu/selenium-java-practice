@@ -42,7 +42,7 @@ pipeline {
             echo 'Archiving artifacts and test reports...'
 
             // Archive JAR files
-            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            archiveArtifacts artifacts: '**/target/*.jar'//, fingerprint: true
 
             // Publish Surefire test results
             junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
@@ -57,11 +57,10 @@ pipeline {
             }
         }
     }
-
     post {
         always {
             echo "Cleaning up workspace"
-           // cleanWs()
+            cleanWs()
 //             emailext (
 //                 subject: "Build ${currentBuild.currentResult}: ${env.JOB_NAME}",
 //                 body: """
