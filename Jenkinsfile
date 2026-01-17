@@ -61,7 +61,7 @@ pipeline {
     post {
         always {
             echo "Cleaning up workspace"
-            cleanWs()
+           // cleanWs()
 //             emailext (
 //                 subject: "Build ${currentBuild.currentResult}: ${env.JOB_NAME}",
 //                 body: """
