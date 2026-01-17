@@ -11,6 +11,7 @@ pipeline {
 
     environment {
        TESTER_NAME = "RK"
+       ENVIRONMENT = "${params.ENVIRONMENT}"
     }
 
     options {
@@ -22,23 +23,33 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "Checking out branch: ${params.BRANCH_NAME}"
-                git branch: "${params.BRANCH_NAME}", url: 'https://github.com/kreetanshu/selenium-java-practice.git'
+               checkout scm
             }
         }
 
-        stage('Build') {
+        stage('Build and Package') {
             steps {
                 echo "Building application for ${params.ENVIRONMENT}"
-//                 sh '''
-//                     mvn clean compile -Denv=${ENVIRONMENT}
-//                 '''
-                script {
-                    env.BUILD_STATUS = 'SUCCESS'
-                }
+                sh '''
+                    mvn clean compile -Denv=${ENVIRONMENT}
+                '''
+    
             }
             post {
-                failure {
+                 always {
+            echo 'Archiving artifacts and test reports...'
+
+            // Archive JAR files
+            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+
+            // Publish Surefire test results
+            junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+            }
+
+           success {
+             echo 'Build and package completed successfully!'
+           }
+           failure {
                     script { env.BUILD_STATUS = 'FAILED' }
                 }
             }
@@ -59,13 +70,6 @@ pipeline {
 //                 """,
 //                 to: 'team@example.com'
 //             )
-        }
-        success {
-            echo "Pipeline completed successfully!"
-
-        }
-        failure {
-            echo "Pipeline failed!"
         }
     }
 }
