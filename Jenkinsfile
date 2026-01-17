@@ -31,7 +31,7 @@ pipeline {
             steps {
                 echo "Building application for ${params.ENVIRONMENT}"
                 
-                bat ' mvn clean compile -Denv=${ENVIRONMENT}'
+                bat ' mvn clean compile package -Denv=${ENVIRONMENT}'
                 // sh '''
                 //     mvn clean compile -Denv=${ENVIRONMENT}
                 // '''
