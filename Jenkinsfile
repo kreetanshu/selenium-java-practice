@@ -30,9 +30,11 @@ pipeline {
         stage('Build and Package') {
             steps {
                 echo "Building application for ${params.ENVIRONMENT}"
-                sh '''
-                    mvn clean compile -Denv=${ENVIRONMENT}
-                '''
+                
+                bat ' mvn clean compile -Denv=${ENVIRONMENT}'
+                // sh '''
+                //     mvn clean compile -Denv=${ENVIRONMENT}
+                // '''
     
             }
             post {
