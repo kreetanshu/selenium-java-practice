@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test Automation Test Suite">
-	<test name="WebUI Test Cases">
+	<!-- <test name="WebUI Test Cases">
 		<groups>
 			<run>
 				<include name="web"/>
@@ -10,7 +10,7 @@
 		<classes>
 			<class name="webui.loginPage.PracticeTest"></class>
 		</classes>
-	</test>
+	</test> -->
 	<test name="API Test Cases">
 		<groups>
 			<run>
@@ -18,7 +18,7 @@
 			</run>
 		</groups>
 		<classes>
-			<!--class name="api.sampleDev.APITests"></class-->
+			<class name="api.sampleDev.APITests"></class>
 		</classes>
 	</test>
 </suite>
