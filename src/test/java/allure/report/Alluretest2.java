@@ -14,7 +14,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.Severity;
+import io.qameta.allure.internal.shadowed.jackson.annotation.JsonClassDescription;
 
+@Severity(io.qameta.allure.SeverityLevel.CRITICAL)
 public class Alluretest2 {
 	@Test
 	public void secondMethod() throws IOException {
