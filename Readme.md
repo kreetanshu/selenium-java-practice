@@ -103,6 +103,7 @@ docker build -t selenium-restassured-automation .
 
 >The Docker bind mount volume approach is used for debugging. Passing the bind mount path with the `-v` flag copies the test results from the Docker container to your local machine.
 
+Docker run command
 
 ```bash
 docker run -v $PWD/docker-results:/app/target --rm selenium-restassured-automation
